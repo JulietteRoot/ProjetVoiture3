@@ -4,6 +4,8 @@ namespace controller;
 use dao\MysqlDao;
 use \Exception; // ATTENTION
 
+// test pour git
+
 // même nom que le fichier
 class VehiculeController{
 
