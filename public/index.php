@@ -2,8 +2,8 @@
 include '../setup.php';
 //var_dump($_SERVER);
 // var_dump($_GET); // pour voir ce qu'on récupère dans l'URL : le controller + l'action
-$controllerName = $_GET['controller']; // on récupère le nom du controlleur saisi dans l'URL
-$methodName = $_GET['method']; // on récupèrera la méthode action
+$controllerName = $_GET['controller']; // on récupère le nom du controlleur saisi dans l'URL (à la clé "controller", cf URL)
+$methodName = $_GET['method']; // on récupèrera la méthode action (à la clé "méthode", cf URL)
 
 $controllerClassName = "controller\\$controllerName"; // un \ pour échapper le \
 //$instance = new $controllerClassName();
@@ -19,5 +19,5 @@ try{
     include VIEW . 'error.php';
 }
 //var_dump($instance);
-//$instance->$methodName(); // sera remplacé par le nom de la méthode "action"
+//$instance->$methodName(); // sera remplacé par le nom de la méthode : "action"
 ?>

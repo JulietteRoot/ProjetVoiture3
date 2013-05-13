@@ -7,7 +7,7 @@ class PersonneController{
     public function action(){
         $dao = new MysqlDao();
         $personnes = $dao->getAllPersonnes();
-        include VIEW."display_personnes.php"; // le setup sera inclus dans l'index
+        include VIEW."display_personnes.php"; // le setup sera inclus dans l'index, c'est grâce à cela que le VIEW est compris
     }
 }
 ?>

@@ -2,7 +2,7 @@
 namespace controller;
 
 use dao\MysqlDao;
-use \Exception; // ATTENTION
+use \Exception; // ATTENTION, penser à cette ligne
 
 // même nom que le fichier
 class VehiculeController{
