@@ -1,11 +1,5 @@
 <?php
-include '../setup.php';
-
-use entity\Voiture;
-
-session_start();
-
-$voiture = $_SESSION['voiture'];
+use entity\Voiture; // non obligatoire, informatif.
 ?>
 <!DOCTYPE html>
 <html>

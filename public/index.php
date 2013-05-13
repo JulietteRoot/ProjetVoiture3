@@ -3,7 +3,7 @@ include '../setup.php';
 //var_dump($_SERVER);
 // var_dump($_GET); // pour voir ce qu'on récupère dans l'URL : le controller + l'action
 $controllerName = $_GET['controller']; // on récupère le nom du controlleur saisi dans l'URL
-$methodName = $_GET['method']; // onrécupèrera la méthode action
+$methodName = $_GET['method']; // on récupèrera la méthode action
 
 $controllerClassName = "controller\\$controllerName"; // un \ pour échapper le \
 //$instance = new $controllerClassName();
@@ -14,7 +14,7 @@ try{
     $instance = $class->newInstance(); // cet objet ReflectionClass est aussi capable de créer une instance de la classe sur laquelle il est en train de travailler
     $method = $class->getMethod($methodName); // renvoie un objet qui représente des informations d'une méthode de la future instance
     $method->invoke($instance); // il peut invoquer cette méthode sur une instance. S'il y a un pb, jettera une exception (ce ne serait pas le cas sinon).
-    //$instance->$methodName(); // avec cette méthode, renverra une fatal error au lieu d'une Exception
+    //$instance->$methodName(); // avec cette méthode, renverra une fatal error au lieu d'une Exception si le nom du controller est faux.
 } catch (Exception $ex){
     include VIEW . 'error.php';
 }

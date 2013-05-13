@@ -3,4 +3,6 @@ setEnv TRUC machin
 RewriteEngine on
 # après l'url, expression vide, redirige vers accueil.php, ne revient pas ds le moteur de réécriture
 RewriteRule ^$ accueil.php [L]
-RewriteRule ^([a-zA-Z]+)$ index.php?controller=$1&method=action
+RewriteRule ^([a-zA-Z]+)$ index.php?controller=$1&method=action [L]
+#3 parties après l'url : controller/action/id (entier entre 0 et 9, au moins une fois)
+RewriteRule ^([a-zA-Z]+)/([a-zA-Z]+)/([0-9]+)$ index.php?controller=$1&method=$2&id=$3 [L]
