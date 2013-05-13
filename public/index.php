@@ -6,8 +6,18 @@ $controllerName = $_GET['controller']; // on récupère le nom du controlleur sa
 $methodName = $_GET['method']; // onrécupèrera la méthode action
 
 $controllerClassName = "controller\\$controllerName"; // un \ pour échapper le \
-echo $controllerClassName;
-$instance = new $controllerClassName();
+//$instance = new $controllerClassName();
+//echo $controllerClassName;
+try{
+    // Code générique. Quand on arrive sur l'index, on sait qu'on va appeler un controller et une méthode, mais on ne sait pas encore lesquels.
+    $class = new ReflectionClass($controllerClassName); // crée un objet ReflectionClass qui permet d'aller voir ce qu'il y a dans une classe, ici la classe du controller (informations sur les méthodes, constructeur, champs statiques...)
+    $instance = $class->newInstance(); // cet objet ReflectionClass est aussi capable de créer une instance de la classe sur laquelle il est en train de travailler
+    $method = $class->getMethod($methodName); // renvoie un objet qui représente des informations d'une méthode de la future instance
+    $method->invoke($instance); // il peut invoquer cette méthode sur une instance. S'il y a un pb, jettera une exception (ce ne serait pas le cas sinon).
+    //$instance->$methodName(); // avec cette méthode, renverra une fatal error au lieu d'une Exception
+} catch (Exception $ex){
+    include VIEW . 'error.php';
+}
 //var_dump($instance);
-$instance->$methodName(); // sera remplacé par le nom de la méthode "action"
+//$instance->$methodName(); // sera remplacé par le nom de la méthode "action"
 ?>

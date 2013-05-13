@@ -5,6 +5,6 @@
         <title></title>
     </head>
     <body>
-        <a href="/ProjetVoiture2/controller/display_personnes_controller.php">Display personnes</a>
+        <a href="/PersonneController">Display personnes</a>
     </body>
 </html>
