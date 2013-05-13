@@ -62,7 +62,22 @@ class MysqlDao {
         $voiture = new Voiture($id, $marque, $modele, $annee);
         return $voiture;
     }
-
+    
+    public function getAllVoitures(){
+        $sql = "SELECT * FROM voiture";
+        $stmt = $this->dbh->prepare($sql);
+        $stmt->execute();
+        $voitures = array();
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $id = $row['id'];
+            $marque = $row['marque'];
+            $modele = $row['modele'];
+            $annee = $row['annee'];
+            $voiture = new Voiture($id, $marque, $modele, $annee);
+            $voitures[] = $voiture;
+        }
+        return $voitures;
+   }
 }
 
 ?>

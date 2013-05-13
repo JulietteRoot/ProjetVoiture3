@@ -9,7 +9,7 @@ header("HTTP/1.1 500 INTERNAL SERVER ERROR");
     </head>
     <body>
         <header style="text-align: center">
-            <img src="img/FBI.png" height="150" width="150">
+            <img src="/img/FBI.png" height="150" width="150">
             
         </header>
         <h1>Oups...</h1>

@@ -16,7 +16,8 @@ $dao = new MysqlDao();
 //    echo $pers.PHP_EOL;
 //}
 
-$voiture = $dao->getVoitureById(1);
-var_dump($voiture);
+//$voiture = $dao->getVoitureById(1);
+//var_dump($voiture);
+var_dump($dao->getAllVoitures());
 
 ?>

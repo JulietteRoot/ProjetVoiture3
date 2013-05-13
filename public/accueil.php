@@ -5,6 +5,7 @@
         <title></title>
     </head>
     <body>
-        <a href="/PersonneController">Display personnes</a>
+        <a href="/PersonneController">Display personnes</a><br>
+        <a href="/VehiculeController/getAllVoitures">Display voitures</a>
     </body>
 </html>
