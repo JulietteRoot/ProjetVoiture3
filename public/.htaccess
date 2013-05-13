@@ -1,0 +1,6 @@
+Options -Indexes
+setEnv TRUC machin
+RewriteEngine on
+# après l'url, expression vide, redirige vers accueil.php, ne revient pas ds le moteur de réécriture
+RewriteRule ^$ accueil.php [L]
+RewriteRule ^([a-zA-Z]+)$ index.php?controller=$1&method=action
