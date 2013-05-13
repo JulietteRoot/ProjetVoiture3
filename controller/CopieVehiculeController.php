@@ -16,7 +16,7 @@ class VehiculeController{
             include VIEW.'display_voiture.php';
         } else {
             throw new Exception(); // renvoie une exception si ça se passe mal
-            // théoriquement on aurait un log et on traiterait cette erreur
+            // théoriquement on aurait un log et on traiterait cette erreur, dans notre appli ici on renverra seulement vers une page d'erreur.
         }
     }
 
