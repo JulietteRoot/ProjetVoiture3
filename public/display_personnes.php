@@ -20,7 +20,7 @@ use \DateTime;
                     <td><?php echo htmlentities($pers->getNom(), ENT_QUOTES, 'UTF-8') ?></td>
                     <td><?php echo $pers->getPrenom()?></td>
                     <td><?php echo $dt->format("d/m/Y")?></td>
-                    <td><a href="/VehiculeController.php/action/<?php echo $pers->getVoiture()->getId()?>"><?php echo $pers->getVoiture()->getId()?></a></td>
+                    <td><a href="/VehiculeController/action/<?php echo $pers->getVoiture()->getId()?>"><?php echo $pers->getVoiture()->getId()?></a></td>
                 </tr>
                 <?php endforeach; ?>
             </table>
