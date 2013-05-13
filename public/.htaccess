@@ -1,10 +1,16 @@
-#Ce fichier .htaccess surcharge la conf d'Apache (possible grâce au AllowOverride all dans la conf)
-Options -Indexes # va chercher l'index en premier, et si il n'y en a pas, liste l'ensemble des répertoires ds le dossier. Ici le "-" supprime l'option.  
-setEnv TRUC machin # variable d'environnement, sera visible dans $_SERVER
-RewriteEngine on # pour la récriture d'URL
-# après l'url, expression vide, redirige vers accueil.php, ne revient pas ds le moteur de réécriture
+#Note : ce fichier .htaccess surcharge la conf d'Apache (possible grâce au AllowOverride all dans la conf)
+#Le dièse pour commenter ne peut pas être utilisé en cours de ligne, il est placé au début.
+Options -Indexes
+#va chercher l'index en premier, et si il n'y en a pas, liste l'ensemble des répertoires ds le dossier. Ici le "-" supprime l'option.  
+setEnv TRUC machin
+# variable d'environnement, sera visible dans $_SERVER
+RewriteEngine on
+# pour la récriture d'URL
+#après l'url, expression vide, redirige vers accueil.php, ne revient pas ds le moteur de réécriture
 RewriteRule ^$ accueil.php [L]
-# méthode action par défaut
+#Les lignes plus restrictives doivent être placées avant, cf ci-dessous (addVehicule correspondrait à [a-zA-Z]+)
+RewriteRule ^addVehicule$ add_vehicule.php [L]
+#méthode action par défaut
 RewriteRule ^([a-zA-Z]+)$ index.php?controller=$1&method=action [L]
 #3 parties après l'url : controller/action/id (entier entre 0 et 9, au moins une fois)
 RewriteRule ^([a-zA-Z]+)/([a-zA-Z]+)/([0-9]+)$ index.php?controller=$1&method=$2&id=$3 [L]

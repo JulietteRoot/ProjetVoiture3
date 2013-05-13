@@ -20,6 +20,7 @@ use entity\Voiture; // non obligatoire, informatif.
                     </tr>
             <?php endforeach; ?>
             </table>
+            <a href="/addVehicule">Add voiture</a>
         </section>
     </body>
 </html>

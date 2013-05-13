@@ -78,6 +78,12 @@ class MysqlDao {
         }
         return $voitures;
    }
+   
+   public function insertVehicule($voiture) {
+        $sql = "INSERT INTO voiture (marque,modele,annee) values (:marque,:modele,:annee);";
+        $stmt = $this->dbh->prepare($sql);
+        $stmt->execute(array("marque" => $voiture->getMarque(), "modele" => $voiture->getModele(), "annee" => $voiture->getAnnee()));
+   }
 }
 
 ?>

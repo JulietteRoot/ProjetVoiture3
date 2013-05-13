@@ -26,5 +26,15 @@ class VehiculeController{
 
         include VIEW . 'display_all_voitures.php';
     }
+    
+    public function addVehicule(){
+        $dao = new MysqlDao();
+        $marque = $_POST['marque'];
+        $modele = $_POST['modele'];
+        $annee = $_POST['annee'];
+        $voiture = new \entity\Voiture(null, $marque, $modele, $annee);
+        $dao->insertVehicule($voiture);
+        $this->getAllVoitures();
+    }
 }
 ?>
