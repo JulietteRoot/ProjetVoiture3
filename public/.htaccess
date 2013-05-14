@@ -1,7 +1,7 @@
 #Note : ce fichier .htaccess surcharge la conf d'Apache (possible grâce au AllowOverride all dans la conf)
 #Le dièse pour commenter ne peut pas être utilisé en cours de ligne, il est placé au début.
 Options -Indexes
-#va chercher l'index en premier, et si il n'y en a pas, liste l'ensemble des répertoires ds le dossier. Ici le "-" supprime l'option.  
+#va chercher l'index en premier, et si il n'y en a pas, liste l'ensemble des répertoires ds le dossier. Ici le "-" supprime cette option.  
 setEnv TRUC machin
 # variable d'environnement, sera visible dans $_SERVER
 RewriteEngine on
