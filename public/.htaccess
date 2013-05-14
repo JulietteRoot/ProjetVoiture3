@@ -6,6 +6,7 @@ setEnv TRUC machin
 # variable d'environnement, sera visible dans $_SERVER
 RewriteEngine on
 # pour la récriture d'URL
+# Avec les expressions régulières, on peut capter un motif ($1, $2... correspond à ce qui est entre parenthèses)
 #après l'url, expression vide, redirige vers accueil.php, ne revient pas ds le moteur de réécriture
 RewriteRule ^$ accueil.php [L]
 #Les lignes plus restrictives doivent être placées avant, cf ci-dessous (addVehicule correspondrait à [a-zA-Z]+)
